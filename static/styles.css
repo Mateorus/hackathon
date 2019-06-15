@@ -1,11 +1,13 @@
 body {
     background-color: #236382;
 }
+
 .logd
 {
 	text-align: center;
 	margin-bottom: 5px;
 }
+
 .bla
 {
 	left: 50%;
@@ -13,6 +15,7 @@ body {
 	position: absolute;
 	transform: translate(-50%, -50%);
 }
+
 .forms
 {
 	height: 100%;
@@ -27,34 +30,8 @@ body {
 	border-left: none;
 }
 
-.inputfile {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
-}
-
-.inputfile + label {
-    font-size: 1.25em;
-	font-weight: 700;
-	height: 100%;
-	width: 70%;
-    color: white;
-    background-color:#22c7e8;
-    display: inline-block;
-}
-
-.inputfile:focus + label,
-.inputfile + label:hover {
-    background-color: red;
-}
-
 .new_img {
-	height: 100%;
-	width: 70%;
-	padding: 10px;
+
 	text-align: center;
 	color: #42f4bf;
 	border-top: none;
@@ -82,9 +59,7 @@ body {
 	margin-top: 10px;
 }
 
-#central_view {
-	margin-top: 70%; 
-}
+
 
 
 #reg-button
@@ -105,20 +80,3 @@ body {
 :-moz-placeholder { /* Firefox 18- */
   color: #42f4bf;
 }
-
-/* #login-button
-{
-	background: #42f4bf;
-	margin-top: 10px;
-	width: 50%;
-}
-#abort-button
-{
-	width: 50%;
-	background: #fc5d5d;
-}
-.kartinka
-{
-	text-align: center;
-	margin-bottom: 30px;
-} */
