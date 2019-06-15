@@ -13,10 +13,10 @@ db = SQLAlchemy(app)
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    password = db.Column(db.String(256), unique=True, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-    photo = db.Column(db.String(256), unique=True, nullable=False)
+    username = db.Column(db.String(80))
+    password = db.Column(db.String(256))
+    email = db.Column(db.String(120))
+    photo = db.Column(db.String(256))
 
     def __repr__(self):
         return '<User %r>' % self.username
@@ -32,24 +32,20 @@ def index():
 def corp_page():
     """Get user info"""
 
-
     return render_template("company.html")
 
 
 @app.route("/client", methods=["GET", "POST"])
 def login():
-    """Log user in"""
-
+    """Add photo to bd"""
 
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
 
-        # Query database for username
-        user = User.query.filter_by(username=request.form.get("username")).first()
-
-        # Ensure username exists and password is correct
-        if user is None:
-            return render_template("404.html")
+        # Add User
+        user = User(username=request.form.get("username"))
+        db.session.add(user)
+        db.session.commit()
 
         # Redirect user to home page
         return redirect("/")
