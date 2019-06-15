@@ -1,0 +1,48 @@
+
+.bla
+{
+    margin-top: 50px;
+   text-align: center;
+}
+.row
+{
+	margin-bottom: 10px;
+}
+
+.alert
+{
+    color: #42f4bf;
+    text-align: center;
+}
+.imgres
+{
+    text-align: center;
+    height: 400px;
+    width: 400px;
+}
+
+.resultstabs
+{
+    margin-top: 50px;
+}
+
+.results
+{
+
+    border: 1px solid#42f4bf;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color: white;
+    padding: 10px;
+}
+
+#login-button
+{
+	background: #22c7e8;
+    width: 50%;
+    height: 40px;
+    border: none;
+    font-weight: bold;
+}
+

@@ -1,0 +1,82 @@
+.logd
+{
+	background: ;
+	text-align: center;
+	margin-bottom: 5px;
+}
+.bla
+{
+	background: ;
+	left: 50%;
+	top: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+}
+.forms
+{
+	height: 100%;
+	width: 70%;
+	padding: 10px;
+	border: 1px solid #22c7e8;
+	background: #1F2833;
+	text-align: center;
+	color: #42f4bf;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+}
+.row
+{
+	margin-bottom: 10px;
+}
+
+.buttons
+{
+	background: ;
+	height: 50px;
+	width: 70%;
+	margin-top: 0px;
+	border: 2px solid black;
+	color: #1F2833;
+	font-weight: bold;
+}
+
+.margin
+{
+	margin-top: 10px;
+}
+
+#login-button
+{
+	background: #42f4bf;
+	margin-top: 10px;
+	width: 50%;
+}
+#reg-button
+{
+	background: #22c7e8;
+	width: 50%;
+}
+#abort-button
+{
+	width: 50%;
+	background: #fc5d5d;
+}
+.kartinka
+{
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #42f4bf;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #42f4bf;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #42f4bf;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #42f4bf;
+}
