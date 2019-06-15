@@ -26,4 +26,7 @@ def face_capture():
         face_locations = face_recognition.face_locations(rgb_frame)
         # print(face_locations)
         if face_locations:
+            # for top, right, bottom, left in face_locations:
+            #     cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
+            cv2.imwrite('static/img/fail.png', frame)
             return frame
