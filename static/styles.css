@@ -1,5 +1,5 @@
 body {
-    background-color: #236382;
+    background-color: #1F2833;
 }
 
 .logd
@@ -22,7 +22,7 @@ body {
 	width: 70%;
 	padding: 10px;
 	border: 1px solid #22c7e8;
-	background: #1F2833;
+	background:  #1F2833;
 	text-align: center;
 	color: #42f4bf;
 	border-top: none;
@@ -30,13 +30,27 @@ body {
 	border-left: none;
 }
 
+.chooseimg
+{
+	margin-top: 30px;
+	background:  ;
+}
+
+
+.custom-file-upload {
+    border: 1px solid black;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+	background: #42f4bf;
+	text-align: center;
+}
+
 .new_img {
 
 	text-align: center;
 	color: #42f4bf;
-	border-top: none;
-	border-right: none;
-	border-left: none;
+	background: red;
 }
 
 .row
