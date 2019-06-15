@@ -1,4 +1,7 @@
 import os
+import face_capture
+import face_recognition
+import json
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.exceptions import default_exceptions
@@ -17,7 +20,7 @@ class User(db.Model):
     username = db.Column(db.String(80))
     password = db.Column(db.String(256))
     email = db.Column(db.String(120))
-    photo = db.Column(db.String(256))
+    vector = db.Column(db.String(2700))
 
     def __repr__(self):
         return '<User %r>' % self.username
@@ -26,14 +29,18 @@ class User(db.Model):
 @app.route("/")
 def index():
     # Render the final template
-    print(__name__)
     return render_template("index.html")
 
 
 @app.route("/company")
 def corp_page():
     """Get user info"""
-
+    frame = face_capture.face_capture()
+    user = User.query.filter_by(id=2).first()
+    known_encoding = face_recognition.face_encodings(frame)[0]
+    print(user.vector)
+    results = face_recognition.compare_faces([json.loads(user.vector)], known_encoding)
+    print(results)
     return render_template("company.html")
 
 
@@ -45,13 +52,19 @@ def client():
     if request.method == "POST":
 
         # Add User
-        user = User(username=request.form.get("username"))
-        db.session.add(user)
-        db.session.commit()
+        user = User(username=request.form.get("username"), )
 
         # Save photo
         file = request.files['file']
         file.save(os.path.join('img/', str(user.id)))
+        img = face_recognition.load_image_file(os.path.join('img/', str(user.id)))
+        vector = face_recognition.face_encodings(img)[0]
+        convert = vector.tolist()
+        json_string = json.dumps(convert)
+        user.vector = json_string
+
+        db.session.add(user)
+        db.session.commit()
 
         # Redirect user to home page
         return redirect("/")
