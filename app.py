@@ -48,16 +48,13 @@ def login():
         user = User.query.filter_by(username=request.form.get("username")).first()
 
         # Ensure username exists and password is correct
-        if not user.username and not check_password_hash(rows[0]["hash"], request.form.get("password")):
+        if not user.username and not check_password_hash(user.password, request.form.get("password")):
             return render_template("404.html")
-
-        # Remember which user has logged in
-        session["user_id"] = user.id
 
         # Redirect user to home page
         return redirect("/")
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
-        return render_template("index.html")
+        return render_template("login.html")
 
