@@ -48,7 +48,7 @@ def login():
         user = User.query.filter_by(username=request.form.get("username")).first()
 
         # Ensure username exists and password is correct
-        if not user.username and not check_password_hash(user.password, request.form.get("password")):
+        if user is None:
             return render_template("404.html")
 
         # Redirect user to home page
