@@ -1,3 +1,4 @@
+import os
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.exceptions import default_exceptions
@@ -25,6 +26,7 @@ class User(db.Model):
 @app.route("/")
 def index():
     # Render the final template
+    print(__name__)
     return render_template("index.html")
 
 
@@ -36,7 +38,7 @@ def corp_page():
 
 
 @app.route("/client", methods=["GET", "POST"])
-def login():
+def client():
     """Add photo to bd"""
 
     # User reached route via POST (as by submitting a form via POST)
@@ -47,10 +49,14 @@ def login():
         db.session.add(user)
         db.session.commit()
 
+        # Save photo
+        file = request.files['file']
+        file.save(os.path.join('img/', str(user.id)))
+
         # Redirect user to home page
         return redirect("/")
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
-        return render_template("login.html")
+        return render_template("client.html")
 
