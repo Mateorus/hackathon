@@ -12,7 +12,6 @@ def face_capture():
     # Grab a single frame of video
             
         ret, frame = video_capture.read()
-        print(ret)
         if ret is False:
             continue
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)

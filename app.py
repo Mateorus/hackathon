@@ -21,6 +21,8 @@ class User(db.Model):
     password = db.Column(db.String(256))
     email = db.Column(db.String(120))
     vector = db.Column(db.String(2700))
+    birthday = db.Column(db.String(30))
+    cardnumber = db.Column(db.String(30))
 
     def __repr__(self):
         return '<User %r>' % self.username
@@ -36,12 +38,14 @@ def index():
 def corp_page():
     """Get user info"""
     frame = face_capture.face_capture()
-    user = User.query.filter_by(id=2).first()
-    known_encoding = face_recognition.face_encodings(frame)[0]
-    print(user.vector)
-    results = face_recognition.compare_faces([json.loads(user.vector)], known_encoding)
-    print(results)
-    return render_template("company.html")
+    user = User.query.all()
+    for el in user:
+        known_encoding = face_recognition.face_encodings(frame)[0]
+        result = face_recognition.compare_faces([json.loads(el.vector)], known_encoding)
+        if result:
+            break
+    return render_template("company.html", username=el.username, email=el.email, birthday=el.birthday
+            cardnumber=el.cardnumber)
 
 
 @app.route("/client", methods=["GET", "POST"])
@@ -52,7 +56,8 @@ def client():
     if request.method == "POST":
 
         # Add User
-        user = User(username=request.form.get("username"), )
+        user = User(username=request.form.get("username"), email=request.form.get("email"),
+                birthday=request.get("birthday"), cardnumber=request.get("cardnumber"))
 
         # Save photo
         file = request.files['file']
