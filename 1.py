@@ -3,6 +3,7 @@ import face_recognition
  
 # Get a reference to webcam
 video_capture = cv2.VideoCapture(0)
+image =  face_recognition.load_image_file("loh.png")
 # Initialize variables
 face_locations = []
  
@@ -24,8 +25,10 @@ while True:
     # print(face_locations)
     if face_locations:
         cv2.imwrite('loh2.png', frame)
-        # print(results)
-        # print(results)
+        biden_encoding = face_recognition.face_encodings(frame)[0]
+        unknown_encoding = face_recognition.face_encodings(image)[0]
+        results = face_recognition.compare_faces([biden_encoding], unknown_encoding)
+        print(results)
         break
        
 
@@ -53,13 +56,3 @@ while True:
 # Release handle to the webcam
 video_capture.release()
 cv2.destroyAllWindows()
-
-
-image =  face_recognition.load_image_file("loh.png")
-image_2 =  face_recognition.load_image_file("loh2.png")
-
-biden_encoding = face_recognition.face_encodings(image_2)[0]
-unknown_encoding = face_recognition.face_encodings(image)[0]
-
-results = face_recognition.compare_faces([biden_encoding], unknown_encoding)
-print(results)
