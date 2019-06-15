@@ -4,32 +4,33 @@
     <title>НАЧАЛО</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/styles.css">
-    <script src="/scripts/change.js"></script>
-    
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div id="central_view">
-        <form method="POST" enctype="multipart/form-data" action="">
-            <div class="row">
-                <div class="col-sm-12 col-12 logd">
-                    <input name="username" value="" placeholder="Name" class="forms">
-                </div>
-                <div class="col-sm-12 col-12 logd">
-                    <input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple />
-                    <label for="file">Choose a file</label>
-                </div>
-                <div class="col-sm-12 col-12 logd">
-                    <input name="password" value="" type="password" placeholder="Password" class="forms">
-                </div>
-            </div>
+    <div class="container bla">
+        <div id="central_view">
+            <form method="POST" enctype="multipart/form-data" action="lol.php">
+                <div class="row">
+                    <div class="col-sm-12 col-12 logd">
+                        <input name="username" value="" placeholder="Name" class="forms">
+                    </div>
 
-            <div class="row">
-                <div class="col-sm-12 col-12 logd margin">
-                    <button value="Log" type="submit" class="buttons" id="reg-button">Create User</button>
+                    <div class="col-sm-12 col-12 logd">
+                        <input type="file" name="file" id="file" accept="image/*" class="new_img"/>
+                    </div>
+
+                    <div class="col-sm-12 col-12 logd">
+                        <input name="password" value="" type="password" placeholder="Password" class="forms">
+                    </div>
                 </div>
-            </div>
-        </form>
+
+                <div class="row">
+                    <div class="col-sm-12 col-12 logd margin">
+                        <button value="Log" type="submit" class="buttons" id="reg-button">Create User</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>
