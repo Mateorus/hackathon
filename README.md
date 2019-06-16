@@ -10,32 +10,40 @@
 Список импортированных модулей:
 
 ![alt text](MODUL.png)
-```
-brew install sdl2
-```
-## Start
-```
-git clone https://github.com/ksnow-be/Push_swap.git; cd Push_swap; make;
-```
-## Usage
 
-Then, to execute the vizualization of the process run this magic [bash script](start.sh).
 
-**./start.sh** VAL1 VAL2
+## Запуск
+```
+flask start;
+В браузере идем на localhost:5000
+```
+##  Использование
+
+Перед вами встанет выбор между опцией для **клиента** и для **компании**
+
+![alt text](INDEX.png)
+
+##  Страница для клиента
+
+![alt text](REG.png) 
   
 ```
-Where:
-
-VAL1 - start point of the randomizer
-VAL2 - finish point of the randomizer
-
-Please notice that the maximum amount of params can't be greather than 1000.
+Загружается информация о пользователе и его фото в базу.
 ```
-## Conclusion
+##  Страница для компании
 
-So, this manual describes the fastest and most pleasant way to observe the execution of the algorithm.
-If you are not a **42 student**, I think you are not interested in the details of the `push_swap` and `checker` programms.
-If you are an **employee and consider this project as part of my resume** - all the details of the project I will explain to you at the meeting.
+![alt text](COMPANY.png) 
+  
+```
+Вывод результата для компании (кассира)
+```
+
+
+## Как это работает?
+
+
+
+
 
 
 ## GIPHY  🐥
