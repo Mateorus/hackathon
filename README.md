@@ -37,4 +37,9 @@ flask start;
 ```
 Вывод результата для компании (кассира)
 ```
-
+## Над проектом работали:
+  gstiedem
+  ksnow-be
+  vferry
+  lsandor-
+  bkiehn
