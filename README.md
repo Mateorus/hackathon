@@ -7,8 +7,12 @@
 
 **Язык проекта -  [`Python`],  бэкенд - Flask/jinja , БД - SQLlite3, фронт - HTML/CSS**
 
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Инструмент | Описание |
+| --- | --- |
+| Язык проекта | Python |
+| Бэк | Flask, Jinja |
+| БД | SQLlite3 |
+| Фронт | Bootstrap/CSS |
 
 Список импортированных модулей:
 
