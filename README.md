@@ -5,7 +5,6 @@
 
 Суть проекта заключается в упрощении реализации скидочных услуг клиентам. При регистрации клиента **в базу** магазина отправляются личные данные **(Ф.И.О, Почта, Дата рождения, Номер скидочной карты для магазина)** , которые в последствии могут быть получены через фотографию клиента у самой кассы.
 
-**Язык проекта -  [`Python`],  бэкенд - Flask/jinja , БД - SQLlite3, фронт - HTML/CSS**
 
 | Инструмент | Описание |
 | --- | --- |
@@ -16,7 +15,17 @@
 
 Список импортированных модулей:
 
-![alt text](MODUL.png)
+```
+import os
+import cv2
+import face_capture
+import face_recognition
+import json
+from flask import Flask, flash, redirect, render_template, request, session
+from flask_sqlalchemy import SQLAlchemy
+from werkzeug.exceptions import default_exceptions
+from werkzeug.security import check_password_hash, generate_password_hash
+```
 
 
 ## Запуск
