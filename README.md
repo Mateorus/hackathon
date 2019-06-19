@@ -38,6 +38,11 @@ flask run; <browser>localhost:5000
 
 ![alt text](INDEX.png)
 
+<p align="center">
+  <img src="INDEX.png" width="350" title="hover text">
+
+</p>
+
 ##  Страница для клиента (регистрация нового пользователя)
 ```
 Загружается информация о пользователе и его фото в базу.
