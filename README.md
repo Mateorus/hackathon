@@ -30,8 +30,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 ## Запуск
 ```
-flask start;
-В браузере идем на localhost:5000
+flask run; <browser>localhost:5000
 ```
 ##  Использование
 
