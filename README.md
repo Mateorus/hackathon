@@ -38,10 +38,6 @@ flask run; <browser>localhost:5000
 
 ![alt text](INDEX.png)
 
-<p align="center">
-  <img src="INDEX.png" width="350" title="hover text">
-
-</p>
 
 ##  Страница для клиента (регистрация нового пользователя)
 ```
@@ -55,7 +51,7 @@ flask run; <browser>localhost:5000
 ```
 Вывод результата для компании (кассира)
 ```
-![alt text](COMPANY.png) 
+![](https://media.giphy.com/media/KxybfIlQT0ewifmXWz/giphy.gif)
 
 
   
